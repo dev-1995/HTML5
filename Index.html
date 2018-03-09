@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GIS </title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+	function success(pos)
+	{
+		coord = pos.coords;
+		document.write('You Coordinates are Latitude : ' +coord.latitude+ ' Longitude : '+coord.longitude);
+	
+	}
+	function error(e)
+	{
+		console.log(e.message);
+	}
+
+	if('geolocation' in navigator)
+	{
+		navigator.geolocation.getCurrentPosition(success, error, options);
+	} 
+	else
+	{
+		console.log('No navigator');
+	}
+</script>
+</body>
+</html>
