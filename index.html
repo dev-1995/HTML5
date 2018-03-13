@@ -35,20 +35,21 @@
 	}
 	
 	
-	
- function getData()
+	function getData()
     {
-        var client_id = 'bEVD8mrHRxW9Cjs5-InkVQ';
-        var client_secret = '14763682188625278006689858784029862841';
-        var access_token = 'bearer WcopQpLrOKsuUptayYeYcv2t50fOZn-yb.y5XXm-6kBlHWs3GYIYzJl5rUODzIJu5DbMpUUf7fjgVR8iIS.UOzQkyIpjS0p0ELI6x-apTQmBCl9PsMsDas0DyhWtQZfT';
+        var client_id = 'HWD6VVYySVKjY5q-FVSvDA';
+        var client_secret = '296826264558482080625797672877583405684';
+        var access_token = 'YrfApBFSUuKj3kSifwtpNZn-XG4A6ExikXzKb0IY1vg80vNKMc6asJHwlt1sxywSrt22LNC4fR.GmwRqwDwwwALzLMRPsxIXdcxsk-hS2dKNhXajOb.Z3bwPTBvz762G';
         var grant_type = 'authorization_code';
-        var redirect_uri  = 'https://www.surveymonkey.com';
+        var redirect_uri  = 'https://dev-1995.github.io/HTML5';
+        console.log(access_token);
         $.ajax({
             url:'https://api.surveymonkey.com/oauth/token',
             type:'POST',
             crossDomain:true,
             dataType:'json',
-            data:{client_secret:client_secret,code : 'AUTH_CODE',redirect_uri:redirect_uri,client_id:client_id,grant_type:grant_type },
+            contentType:'application/x-www-form-urlencoded',
+            data:{client_secret:client_secret,code :access_token,redirect_uri:redirect_uri,client_id:client_id,grant_type:grant_type },
             error:function(e)
             {
                 console.log(e);
