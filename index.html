@@ -4,7 +4,10 @@
 	<title>GIS TPM</title>
 </head>
 <body>
-
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script type="text/javascript">
 	var options = {
   enableHighAccuracy: true,
@@ -30,6 +33,32 @@
 	{
 		console.log('No navigator');
 	}
+	
+	
+	
+ function getData()
+    {
+        var client_id = 'bEVD8mrHRxW9Cjs5-InkVQ';
+        var client_secret = '14763682188625278006689858784029862841';
+        var access_token = 'bearer WcopQpLrOKsuUptayYeYcv2t50fOZn-yb.y5XXm-6kBlHWs3GYIYzJl5rUODzIJu5DbMpUUf7fjgVR8iIS.UOzQkyIpjS0p0ELI6x-apTQmBCl9PsMsDas0DyhWtQZfT';
+        var grant_type = 'authorization_code';
+        var redirect_uri  = 'https://www.surveymonkey.com';
+        $.ajax({
+            url:'https://api.surveymonkey.com/oauth/token',
+            type:'POST',
+            crossDomain:true,
+            dataType:'json',
+            data:{client_secret:client_secret,code : 'AUTH_CODE',redirect_uri:redirect_uri,client_id:client_id,grant_type:grant_type },
+            error:function(e)
+            {
+                console.log(e);
+            },
+            success:function(data)
+            {
+                console.log(data);
+            }
+        });
+        }
 </script>
 </body>
 </html>
